@@ -89,21 +89,47 @@ a {
 }
 
 /*設定系のbox*/
-.con a {
+.box1 a {
   display: inline-block;
   text-decoration: none;
   color: white;
   background: /*#94bcb7*/#3e687b;
   width: 200px;
   height: 200px;
-  margin-top: 20px;
+  /*align-content: flex-start;*/
+  text-align: center;
+  justify-content: space-around;
+}
+
+.sel {
+  justify-content: space-around;
+  overflow: hidden;
+  text-align: center;
   margin-left: 5px;
   margin-right: 5px;
-  /*align-content: flex-start;*/
-  justify-content: space-around;
-  text-align: center;
+  margin-top: 20px;
 }
-.con a :hover {
+
+.box1 p {
+  background: #b3d0d7;
+  padding: 10px 0px;
+}
+
+#lay {
+  width: 200px;
+  height: 20px;
+  background: black;
+}
+
+.select {
+  width: 200px;
+  float: left;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 20px;
+}
+
+.box1 a :hover {
   opacity: 0.6;
   background: rgba(62,104,125,0.5);
 }
@@ -113,18 +139,14 @@ span {
   margin-top: 80px;
 }
 
-.btn_box {
-
-}
-
-.con {
+.box1 {
   padding-top: 60px;
   overflow: hidden;
 }
 
-.box {
+.box1 {
   margin-left: 20px;
-  padding-top: 30px;
+  pdding-top: 30px;
   margin-bottom: 500px;
 }
 
@@ -139,7 +161,7 @@ span {
   margin-top: 10px;
 }
 
-.con h2 {
+.box1 h2 {
   margin-left: 10px;
   display: inline-block;
   background: #b3d0d7;
