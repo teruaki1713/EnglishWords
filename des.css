@@ -6,9 +6,24 @@
 
 body {
   background: #dddddd;
-  height:10000px;
 }
 
+main {
+  background: #f4f5f7;
+  width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer {
+  background: #888888;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 30px 0px;
+}
+
+/*ヘッダー*/
 .nav {
   position:fixed;
   top: 0px;
@@ -32,7 +47,7 @@ body {
 
 .nav_button {
   justify-content: center;
-  float: right; 
+  float: right;
   margin-right: 10px;
 }
 
@@ -46,4 +61,88 @@ body {
 
 #button:hover {
   background-color:rgba(255,0,0,0.2);
+}
+
+a {
+  text-decoration: none;
+}
+
+/*ヘッドワッパ〜*/
+.head_wrapper {
+  margin-top: 35px;
+  padding-top: 80px;
+  text-align: center;
+  background-image: url(sky_background.jpeg);
+  background-size: cover;
+  padding-bottom: 100px;
+}
+
+.head_wrapper h1 {
+  font-family: 'Great Vibes', cursive;
+}
+
+.hwp {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 90px;
+}
+
+/*設定系のbox*/
+.con a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background: /*#94bcb7*/#3e687b;
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  /*align-content: flex-start;*/
+  justify-content: space-around;
+  text-align: center;
+}
+.con a :hover {
+  opacity: 0.6;
+  background: rgba(62,104,125,0.5);
+}
+
+span {
+  display: inline-block;
+  margin-top: 80px;
+}
+
+.btn_box {
+
+}
+
+.con {
+  padding-top: 60px;
+  overflow: hidden;
+}
+
+.box {
+  margin-left: 20px;
+  padding-top: 30px;
+  margin-bottom: 500px;
+}
+
+.button {
+
+}
+
+.kyo {
+  background: black;
+  display: inline-block;
+  clear: left;
+  margin-top: 10px;
+}
+
+.con h2 {
+  margin-left: 10px;
+  display: inline-block;
+  background: #b3d0d7;
+  padding: 20px;
+  width: auto;
 }
