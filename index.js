@@ -115,6 +115,34 @@ let words =
  ["therefore", "それゆえに"], ["instead", "代わりに"], ["until", "〜まで"], ["besides", "〜に加えて"], ["except", "〜を除いて"]
  ];
 
+ //もう一度ボタンーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+ function more ()
+ {
+   ok=0;
+   i=0;
+   result=0;
+   random=0;
+   i1=0;
+   answer=0;
+   select1=0;
+   select2=0;
+   select3=0;
+   select4=0;
+   num=0;
+   iq=0;
+   iq2=0;
+   random7=0;
+   push=0;
+   num7=[];
+   i9=0;
+   ver=0;
+   n = 0;
+   document.getElementById("check").textContent = "採点結果：〜〜〜〜〜〜〜〜〜";
+   document.getElementById("PN").textContent = "正答率：〜％";
+   document.getElementById("QN").textContent = "０問目：";
+   document.getElementById("WN").textContent = "No."+"　　";
+ }
+
  //問題の範囲を選択ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
  let x = 0;
  let y = 0;
