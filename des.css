@@ -1,36 +1,25 @@
+/*共通部分---------------------------------------------------------------------*/
 * {
   padding: 0;
   margin: 0;
-  font-family: "Montserrat","游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+  font-family: "Montserrat", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
+/*body全体--------------------------------------------------------------------*/
 body {
   background: #dddddd;
 }
 
-main {
-  background: #f4f5f7;
-  width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-footer {
-  background: #888888;
-  width: 100%;
-  color: white;
-  text-align: center;
-  padding: 30px 0px;
-}
-
+/*ヘッダー---------------------------------------------------------------------*/
 /*ヘッダー*/
 .nav {
-  position:fixed;
+  position: fixed;
   top: 0px;
   left: 0px;
-}
-
-.nav {
   background: #888888;
   width: 100%;
   overflow: hidden;
@@ -45,6 +34,7 @@ footer {
   margin-left: 20px;
 }
 
+/*navボタン*/
 .nav_button {
   justify-content: center;
   float: right;
@@ -54,17 +44,32 @@ footer {
 #button {
   outline: none;
   border: none;
-  background-color: rgba(136,136,136,1);
+  background-color: rgba(136, 136, 136, 1);
   padding: 7px 10px;
   color: white;
 }
 
 #button:hover {
-  background-color:rgba(255,0,0,0.2);
+  background-color: rgba(255, 0, 0, 0.2);
 }
 
-a {
-  text-decoration: none;
+/*説明部分*/
+aside {
+  text-align: center;
+  opacity: 0.5;
+  margin-top: 50px;
+}
+
+#text {
+  margin-top: 20px;
+}
+
+/*メイン-----------------------------------------------------------------------*/
+main {
+  background: #f7f7f7;
+  width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*ヘッドワッパ〜*/
@@ -88,17 +93,52 @@ a {
   margin-top: 90px;
 }
 
-/*設定系のbox*/
+/*設定系-----------------------------------------------------------------------*/
+/*設定共通部分---------------------------------------*/
+.box1 {
+  margin-left: 20px;
+  margin-bottom: 200px;
+  padding-top: 60px;
+  overflow: hidden;
+}
+
+.box1 h2 {
+  margin-left: 10px;
+  display: inline-block;
+  background: #b3d0d7;
+  padding: 20px;
+  width: auto;
+}
+
 .box1 a {
   display: inline-block;
   text-decoration: none;
   color: white;
-  background: /*#94bcb7*/#3e687b;
+  background:
+    /*#94bcb7*/
+    #3e687b;
   width: 200px;
   height: 200px;
   /*align-content: flex-start;*/
   text-align: center;
   justify-content: space-around;
+}
+
+.box1 a :hover {
+  opacity: 0.6;
+  background: rgba(62, 104, 125, 0.5);
+}
+
+.box1 p {
+  background: #b3d0d7;
+  padding: 10px 0px;
+}
+
+.kyo {
+  background: black;
+  display: inline-block;
+  clear: left;
+  margin-top: 10px;
 }
 
 .sel {
@@ -110,17 +150,6 @@ a {
   margin-top: 20px;
 }
 
-.box1 p {
-  background: #b3d0d7;
-  padding: 10px 0px;
-}
-
-#lay {
-  width: 200px;
-  height: 20px;
-  background: black;
-}
-
 .select {
   width: 200px;
   float: left;
@@ -129,9 +158,11 @@ a {
   margin-top: 20px;
 }
 
-.box1 a :hover {
-  opacity: 0.6;
-  background: rgba(62,104,125,0.5);
+/*レイアウト用box*/
+#lay {
+  width: 200px;
+  height: 20px;
+  background: black;
 }
 
 span {
@@ -139,32 +170,57 @@ span {
   margin-top: 80px;
 }
 
-.box1 {
-  padding-top: 60px;
+/*問題表示領域-------------------------*/
+.Qarea {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background: #f7f7f7
+    /*#3e687b*/
+  ;
+  padding-top: 200px;
+  padding-bottom: 700px;
+}
+
+.Wnumber {
+  float: left;
+}
+
+.Pnumber {
+  float: right;
+}
+
+.inner {
   overflow: hidden;
 }
 
-.box1 {
-  margin-left: 20px;
-  pdding-top: 30px;
-  margin-bottom: 500px;
+.none {
+  display: none;
 }
 
-.button {
-
+.flo {
+  font-size: 20px;
 }
 
-.kyo {
-  background: black;
-  display: inline-block;
-  clear: left;
-  margin-top: 10px;
+.ch {
+  font-size: 20px;
 }
 
-.box1 h2 {
-  margin-left: 10px;
-  display: inline-block;
-  background: #b3d0d7;
-  padding: 20px;
-  width: auto;
+.input {
+  display: block;
+  width: 99%;
+  font-size: 20px;
+}
+
+#QN {
+  font-size: 30px;
+}
+
+/*フッター---------------------------------------------------------------------*/
+footer {
+  background: #888888;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 30px 0px;
 }
