@@ -36,7 +36,7 @@ body {
 
 /*navボタン*/
 .nav_button {
-  justify-content: center;
+  justify-content: center;　
   float: right;
   margin-right: 10px;
 }
