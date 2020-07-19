@@ -36,7 +36,7 @@ body {
 
 /*navボタン*/
 .nav_button {
-  justify-content: center;　
+  justify-content: center;
   float: right;
   margin-right: 10px;
 }
@@ -109,7 +109,6 @@ aside {
 
 .Ktext {
   background: #b3d0d7;
-  height: 500px;
   width: 95%;
   margin-right: auto;
   margin-left: auto;
@@ -117,7 +116,7 @@ aside {
 
 .info li {
   margin-left: 40px;
-  padding-top: 10px;
+  padding: 20px;
 }
 
 /*設定系-----------------------------------------------------------------------*/
