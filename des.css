@@ -41,11 +41,20 @@ body {
   margin-right: 10px;
 }
 
-#button {
+.button1_1 {
   outline: none;
   border: none;
   background-color: rgba(136, 136, 136, 1);
   padding: 7px 10px;
+  color: white;
+}
+
+.button1_2 {
+  display: inline-block;
+  outline: none;
+  border: none;
+  background-color: rgba(136, 136, 136, 1);
+  padding: 5px 10px;
   color: white;
 }
 
