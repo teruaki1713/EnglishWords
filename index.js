@@ -18,19 +18,16 @@ $(function(){
 //リセットボタンの処理-------------------------------------------------------------
 function clearh()
 {
-  document.location.reload();
+	document.location.reload();
 }
 
 function re()
 {
-  setInterval( clearh , 500);
+	setInterval( clearh , 500);
 }
 
 //------------------------------------------------------------------------------
 console.log("javascriptは有効です");
-
-		//alert('アップデートのお知らせ\n内容\n①重複しないランダム機能が追加されました\n②デフォルトで選択されている問題の種類を重複なしのランダム機能に変更しました\n※このアップデートは現在pc版のみで実行されています');
-
 let words =
  [
  ["agree","賛成する"],["oppose","反対する"],["advise","忠告する"],["tip","助言"],["discuss","ついて話し合う"],
@@ -126,8 +123,6 @@ let words =
    answer=0;
    select1=0;
    select2=0;
-   select3=0;
-   select4=0;
    num=0;
    iq=0;
    iq2=0;
@@ -143,286 +138,175 @@ let words =
    document.getElementById("WN").textContent = "No."+"　　";
  }
 
- //問題の範囲を選択ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
- let x = 0;
- let y = 0;
-
-document.getElementById("button3_0").onclick = function () {
-   x=1;
-   y=400;
-};
-
-document.getElementById("button3_1").onclick = function () {
-   x=1;
-   y=70;
-};
-
-document.getElementById("button3_2").onclick = function () {
-   x=71;
-   y=133;
-};
-
-document.getElementById("button3_3").onclick = function () {
-   x=134;
-   y=188;
-};
-
-document.getElementById("button3_4").onclick = function () {
-   x=189;
-   y=248;
-};
-
-document.getElementById("button3_5").onclick = function () {
-   x=249;
-   y=299;
-};
-
-document.getElementById("button3_6").onclick = function () {
-   x=300;
-   y=354;
-};
-
-document.getElementById("button3_7").onclick = function () {
-   x=355;
-   y=400;
-};
+//問題の範囲を選択ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+var x = 0;
+var y = 0;
+$("#button3_0").click(function () { x = 1; y = 400;});
+$("#button3_1").click(function () { x = 1; y = 70;});
+$("#button3_2").click(function () { x = 71; y = 133;});
+$("#button3_3").click(function () { x = 134; y = 188;});
+$("#button3_4").click(function () { x = 189; y = 248;});
+$("#button3_5").click(function () { x = 249; y = 299;});
+$("#button3_6").click(function () { x = 300; y = 354;});
+$("#button3_7").click(function () { x = 355; y = 400;});
 
 //ボタンを押した時の処理ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-let ques=question3;
-
-document.getElementById("button2_0").onclick = function() {
-  ques=question3;
-};
-
-document.getElementById("button2_1").onclick = function() {
-  ques=question2;
-};
-
-document.getElementById("button2_2").onclick = function() {
-  ques=question1;
-};
-
+var ques = question3;
+$("#button2_0").click(function () {ques = question3;});
+$("#button2_1").click(function () {ques = question2;});
+$("#button2_2").click(function () {ques = question1;});
 
 //採点ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-function checking () {
+let i = 0;
+function checking ()
+{
 	if (i==0){
 		ques();
 		i++;
-		document.getElementById("check").textContent = "採点結果：〜〜〜〜〜〜〜〜〜";
+		$("#check").text("採点結果：〜〜〜〜〜〜〜〜〜");
 	}else if (i==1) {
 		i--;
 		getValue();
 	}
 }
 
-let i = 0;
-
+//キーボードの操作ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 function hoge(code)
 {
 	//エンターキー押下なら
 	if(13 === code)
 	{
 		result = document.getElementById("form").value;
-
 		checking();
-
 	}
 	if(32 === code)
 	{
 		event.preventDefault()
 	}
-
 }
 
 //採点関数ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 let ok=0;
 let result=0;
-
-function getValue(){
-  // value値を取得する
-  result = document.getElementById("form").value;
-
-  // 表示する
-  if(result==answer)
-  {
-    ok++;
-  	document.getElementById("check").textContent = "⭕️正解です";
-  	document.getElementById("PN").textContent = "正答率：" + ((ok/i1)*100) +"　％";
-  }else if(result!==answer)
-  {
-  	document.getElementById("check").textContent = "❌"+"正解は　"+answer+"　です";
-  	document.getElementById("PN").textContent = "正答率：" + ((ok/i1)*100) +"　％";
-  }
+let $check = $("#check");
+let $PN = $("#PN");
+function getValue()
+{
+	// value値を取得する
+	result = document.getElementById("form").value;
+	// 表示する
+	if(result　==　answer)
+	{
+		ok++;
+		$check.text("⭕️正解です");
+		$PN.text("正答率：" + ((ok/i1)*100) +"　％");
+	}else if(result !==　answer)
+	{
+		$check.text("❌"+"正解は　"+answer+"　です");
+		$PN.text("正答率：" + ((ok/i1)*100) +"　％");
+	}
 }
-
-//問題を表示するランダム関数ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+//問題表示関数ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 let random=0;
 let i1=0;
 let answer=0;
-
 let select1=0;
 let select2=0;
-let select3=0;
-let select4=0;
 let num=0;
-
-
-
-function question1 (){
-
-select1=x;
-select2=y;
-select3=select1;
-select4=select2;
-num=select4-select3+1;
-
-alert1();
-
-i1++;
-
-random = Math.floor( Math.random() * num)+select3-1;  //words.length
-
-document.getElementById("QN").textContent = i1+"問目："+words[random][1];
-document.getElementById("WN").textContent = "No."+(random+1)+"　　";
-//document.getElementById("PN").textContent = i+"問目："+words[random][0];
-
-answer = words[random][0];
-
-//document.getElementById("check").textContent = "採点結果：";
-
-document.form.reset();
+function select()
+{
+	select1=x;
+	select2=y;
 }
 
-let iq=0;
+//問題を表示するランダム関数ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+function question1 (){
+	select();
+	num=select2-select1+1;
+	alert1();
+	i1++;
+	random = Math.floor( Math.random() * num)+select1-1;  //words.length
+	$("#QN").text(i1+"問目："+words[random][1]);
+	$("#WN").text("No."+(random+1)+"　　");
+	answer = words[random][0];
+	document.form.reset();
+}
 
+//問題を順番に表示する関数ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+let iq=0;
 function question2 ()
 {
-
-	if(iq+select3>select4)
+	if(iq+select1>select2)
 	{
 		alert("選択範囲が終了しました。正答率は　　　"+((ok/i1)*100) +"％"+"でした。");
 		return false;
 	}
-
 	alert1();
-
-	select1=x;
-	select2=y;
-	select3=select1-0;
-	select4=select2-0;
-	let num2=iq+select3;
+	select();
+	let num2=iq+select1;
 	iq++;
 	i1++;
-	document.getElementById("QN").textContent = i1+"問目："+words[num2-1][1];
-	document.getElementById("WN").textContent = "No."+(num2)+"　　";
+	$("#QN").text(i1+"問目："+words[num2-1][1]);
+	$("#WN").text("No."+(num2)+"　　");
 	answer = words[num2-1][0];
 	document.form.reset();
-
-
 }
 
+//問題を重複なしにランダムに表示する関数ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 let iq2=0;
-
 function question3 (){
-
-	select1=x;
-	select2=y;
-	select3=select1-0;
-	select4=select2-0;
-	num=select4-select3+1;
-
+	select();
+	num=select2-select1+1;
 	iq2++;
-
-	if(iq2+select3-1>select4)
+	if(iq2+select1-1>select2)
 	{
 		alert("選択範囲が終了しました。正答率は　　　"+((ok/i1)*100) +"％"+"でした。"+"ページを更新してください。");
 		return false;
 	}
-
-
-
-alert1();
-
-i1++;
-
-//random = Math.floor( Math.random() * num)+select3-1;  //words.length
-norandom();
-
-document.getElementById("QN").textContent = i1+"問目："+words[random7][1];
-document.getElementById("WN").textContent = "No."+(random7+1)+"　　";
-
-answer = words[random7][0];
-
-document.form.reset();
+	alert1();
+	i1++;
+	norandom();
+	$("#QN").text(i1+"問目："+words[random7][1]);
+	$("#WN").text("No."+(random7+1)+"　　");
+	answer = words[random7][0];
+	document.form.reset();
 }
 
 //重複なしのランダム
 
 let random7=0;
 let push=0;
-
 let num7=[];
-
 let i9=0;
-
 let ver=0;
-
 let n = num7.length;
-
-
 function norandom()
 {
-
 	randomnum();
-
 	function randomnum()
 	{
 		push +=1
-
-		random7 = Math.floor( Math.random() * num)+select3-1;
-
+		random7 = Math.floor( Math.random() * num)+select1-1;
 		for(i9=0 ; i9<=num7.length ; i9++)
 		{
 			if(num7.length==num)
 			{
 				return false;
 			}
-
 			if(num7[i9]==random7)
 			{
 				randomnum();
 				return false;
 			}
-
 		}
-
 		num7.push(random7);
 	}
-
 }
-
-
-
-
-
 
 //アラートーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 function alert1()
 {
-
-if(select3>select4)
-{
-	alert("範囲選択の数値に誤りがあります。左側の数値が右側の数値よりも大きくなっていませんか？");
-}
-
-if(select3>words.length)
-{
-	alert("最小値が選択可能範囲を超えています");
-}
-
-if(select4>words.length)
-{
-	alert("最大値が選択可能範囲を超えています");
-}
-
+	if(select1>select2){alert("範囲選択の数値に誤りがあります。左側の数値が右側の数値よりも大きくなっていませんか？");}
+	if(select1>words.length){alert("最小値が選択可能範囲を超えています");}
+	if(select2>words.length){alert("最大値が選択可能範囲を超えています");}
 }
