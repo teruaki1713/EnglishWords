@@ -16,15 +16,8 @@ $(function(){
 });
 
 //リセットボタンの処理-------------------------------------------------------------
-function clearh()
-{
-	document.location.reload();
-}
-
-function re()
-{
-	setInterval( clearh , 500);
-}
+function clearh	(){document.location.reload();}
+function re	(){setInterval( clearh , 500);}
 
 //------------------------------------------------------------------------------
 console.log("javascriptは有効です");
@@ -115,40 +108,40 @@ let words =
  //もう一度ボタンーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
  function more ()
  {
-   ok=0;
-   i=0;
-   result=0;
-   random=0;
-   i1=0;
-   answer=0;
-   select1=0;
-   select2=0;
-   num=0;
-   iq=0;
-   iq2=0;
-   random7=0;
-   push=0;
-   num7=[];
-   i9=0;
-   ver=0;
-   n = 0;
-   document.getElementById("check").textContent = "採点結果：〜〜〜〜〜〜〜〜〜";
-   document.getElementById("PN").textContent = "正答率：〜％";
-   document.getElementById("QN").textContent = "０問目：";
-   document.getElementById("WN").textContent = "No."+"　　";
+   ok=		0;
+   i=		0;
+   result=	0;
+   random=	0;
+   i1=		0;
+   answer=	0;
+   select1=	0;
+   select2=	0;
+   num=		0;
+   iq=		0;
+   iq2=		0;
+   random7=	0;
+   push=	0;
+   num7=       [];
+   i9=		0;
+   ver=		0;
+   n = 		0;
+   $("#check").	text("採点結果：〜〜〜〜〜〜〜〜〜");
+   $("#PN").	text("正答率：〜％");
+   $("#QN").	text("０問目：");
+   $("#WN").	text("No."+"　　");
  }
 
 //問題の範囲を選択ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 var x = 0;
 var y = 0;
-$("#button3_0").click(function () { x = 1; y = 400;});
-$("#button3_1").click(function () { x = 1; y = 70;});
-$("#button3_2").click(function () { x = 71; y = 133;});
-$("#button3_3").click(function () { x = 134; y = 188;});
-$("#button3_4").click(function () { x = 189; y = 248;});
-$("#button3_5").click(function () { x = 249; y = 299;});
-$("#button3_6").click(function () { x = 300; y = 354;});
-$("#button3_7").click(function () { x = 355; y = 400;});
+$("#button3_0").click(function () { x = 1; 	y = 400;});
+$("#button3_1").click(function () { x = 1; 	y =  70;});
+$("#button3_2").click(function () { x = 71; 	y = 133;});
+$("#button3_3").click(function () { x = 134; 	y = 188;});
+$("#button3_4").click(function () { x = 189; 	y = 248;});
+$("#button3_5").click(function () { x = 249; 	y = 299;});
+$("#button3_6").click(function () { x = 300; 	y = 354;});
+$("#button3_7").click(function () { x = 355; 	y = 400;});
 
 //ボタンを押した時の処理ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 var ques = question3;
@@ -161,8 +154,8 @@ let i = 0;
 function checking ()
 {
 	if (i==0){
-		ques();
 		i++;
+		ques();
 		$("#check").text("採点結果：〜〜〜〜〜〜〜〜〜");
 	}else if (i==1) {
 		i--;
@@ -186,10 +179,10 @@ function hoge(code)
 }
 
 //採点関数ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-let ok=0;
-let result=0;
-let $check = $("#check");
-let $PN = $("#PN");
+let ok=		0;
+let result=	0;
+let $check = 	$("#check");
+let $PN = 	$("#PN");
 function getValue()
 {
 	// value値を取得する
@@ -207,12 +200,12 @@ function getValue()
 	}
 }
 //問題表示関数ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-let random=0;
-let i1=0;
-let answer=0;
-let select1=0;
-let select2=0;
-let num=0;
+let random=	0;
+let i1=		0;
+let answer=	0;
+let select1=	0;
+let select2=	0;
+let num=	0;
 function select()
 {
 	select1=x;
@@ -221,11 +214,11 @@ function select()
 
 //問題を表示するランダム関数ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 function question1 (){
-	select();
-	num=select2-select1+1;
-	alert1();
 	i1++;
-	random = Math.floor( Math.random() * num)+select1-1;  //words.length
+	select();
+	alert1();
+	num	=	select2-select1+1;
+	random 	=	Math.floor( Math.random() * num)+select1-1;
 	$("#QN").text(i1+"問目："+words[random][1]);
 	$("#WN").text("No."+(random+1)+"　　");
 	answer = words[random][0];
@@ -275,10 +268,10 @@ function question3 (){
 //重複なしのランダム
 
 let random7=0;
-let push=0;
-let num7=[];
-let i9=0;
-let ver=0;
+let push=	0;
+let num7=      [];
+let i9=		0;
+let ver=	0;
 let n = num7.length;
 function norandom()
 {
@@ -306,7 +299,7 @@ function norandom()
 //アラートーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 function alert1()
 {
-	if(select1>select2){alert("範囲選択の数値に誤りがあります。左側の数値が右側の数値よりも大きくなっていませんか？");}
+	if(select1>select2)	{alert("範囲選択の数値に誤りがあります。左側の数値が右側の数値よりも大きくなっていませんか？");}
 	if(select1>words.length){alert("最小値が選択可能範囲を超えています");}
 	if(select2>words.length){alert("最大値が選択可能範囲を超えています");}
 }
