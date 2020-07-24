@@ -9,6 +9,10 @@ a {
   text-decoration: none;
 }
 
+body {
+  display: none;
+}
+
 /*body全体--------------------------------------------------------------------*/
 body {
   background: #dddddd;
